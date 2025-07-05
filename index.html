@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>活動攤位一覽</title>
+  <meta name="description" content="虛擬市集">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+    /* 為了讓從 layout.tsx 來的字體設定生效 */
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+<body class="min-h-screen bg-gradient-to-b from-orange-50 to-pink-50">
+
+  <header class="sticky top-0 z-50 bg-gradient-to-r from-orange-400 to-pink-400 shadow-lg">
+    <div class="container mx-auto px-4 py-3">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-2">
+          <div class="text-white font-bold text-xl">🏮 虛擬市集</div>
+        </div>
+        <nav class="flex space-x-6">
+          <a href="#" class="text-white hover:text-orange-100 transition-colors">攤主報名</a>
+          <a href="#" class="text-white hover:text-orange-100 transition-colors">攤位活動</a>
+          <a href="#" class="text-white hover:text-orange-100 transition-colors">活動討論</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <div class="text-center mb-8">
+      <div class="inline-block relative">
+        <div class="bg-gradient-to-r from-green-400 to-green-500 text-white px-8 py-4 rounded-full shadow-lg">
+          <h1 class="text-3xl font-bold">攤位一覽</h1>
+        </div>
+        <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-green-500"></div>
+      </div>
+    </div>
+
+    <div id="booth-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      </div>
+
+    <div id="no-booths-message" class="text-center py-12 hidden">
+      <p class="text-gray-500 text-lg">正在載入攤位資料...</p>
+      <p class="text-gray-400 mt-2">若長時間未顯示，請檢查 booths.csv 檔案是否存在或網路連線。</p>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
